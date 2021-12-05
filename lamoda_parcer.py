@@ -11,9 +11,10 @@ import urllib.request
 import re
 import shutil
 from os import path
-def lamoda(link, path, how_much_pages):
+def lamoda(link, path, how_much_pages, choice):
     count = 0
     go_name = 0
+    gender = ""
     while count <= how_much_pages:
         pages = list(link)
         print(pages)
@@ -37,9 +38,13 @@ def lamoda(link, path, how_much_pages):
         print("\n".join(new_links))
 
         for link_1 in new_links:
+            if (choice == 1):
+                    gender = 'F'
+            else:
+                gender = "M"
             go_name = go_name + 1
             url = link_1
-            filename = str(go_name) + ".jpeg"
+            filename = str(go_name) + "_" + gender + "_" + "sketchers" + ".jpeg"
             source_path = filename
             r = requests.get(url, allow_redirects=True)
             open(filename, 'wb').write(r.content)

@@ -8,25 +8,43 @@
 from bs4 import BeautifulSoup as BS
 import urllib.request
 from lamoda_parcer import lamoda
+from element_shop_parcer import element_shop
+from ozon_parcer import ozon
 def main_parcer():
-    all_links = ['https://www.lamoda.ru/c/2968/shoes-krossovki-kedy/?page=1', 'https://www.lamoda.ru/c/2981/shoes-krossovk-kedy-muzhskie/?page=1']
-    all_pages = [167, 161]
+    all_links = ['https://www.lamoda.ru/c/2968/shoes-krossovki-kedy/?page=1', 'https://www.lamoda.ru/c/2981/shoes-krossovk-kedy-muzhskie/?page=1', 'https://elementshop.ru/catalog/shoes/-vid-krossovki/pol-muzh/']
+    all_pages = [167, 161, 5]
 
     link = input("Какой каталог спарсить? Введите число(ссылки находятся в текстовом файле):")
+    path = input("Укажите полный путь назначения для помещения туда фотографий: ")
+    choice = int(link)
     if int(link) == 1:
         link = all_links[0]
         my_page = all_pages[0]
+        how_much_pages = int(input("Укажите, сколько страниц спарсить " + "(максимум " + str(my_page) + "): "))
+        print("Работает парсер для сайта lamoda... ")
+        lamoda(link, path, how_much_pages, choice)
+        print("Готово!")
     elif int(link) == 2:
         link = all_links[1]
         my_page = all_pages[1]
-    else:
-        return 0
+        how_much_pages = int(input("Укажите, сколько страниц спарсить " + "(максимум " + str(my_page) + "): "))
+        print("Работает парсер для сайта lamoda... ")
+        lamoda(link, path, how_much_pages, choice)
+        print("Готово!")
+    elif int(link) == 3:
+        link = all_links [2]
+        my_page = all_pages [2]
+        how_much_pages = int(input("Укажите, сколько страниц спарсить " + "(максимум " + str(my_page) + "): "))
+        print("Работает парсер для сайта Element Shop... ")
+        element_shop()
+        print("Готово!")
+    elif int(link) == 4:
+        print("Работает парсер для сайта Ozon... ")
+        ozon()
+        print("Готово!")
 
-    path = input("Укажите полный путь назначения для помещения туда фотографий: ")
-    how_much_pages = int(input("Укажите, сколько страниц спарсить " + "(максимум " + str(my_page) + "): "))
-    print("Работает парсер для сайта lamoda... ")
-    lamoda(link, path, how_much_pages)
-    print("Готово!")
+
+
     return 0
 
 main_parcer()
