@@ -4,7 +4,6 @@
 #необходимое кол-во страниц для обработки
 #Выходные данные: файлы формата jpeg, сохраняемые в заданную папку
 
-
 import requests
 from bs4 import BeautifulSoup as BS
 import urllib.request
@@ -51,5 +50,6 @@ def lamoda(link, path, how_much_pages, choice):
             shutil.move(source_path, path)
 
         count = count + 1
+    print("Готово!")
     return 0
 

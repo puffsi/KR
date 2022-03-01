@@ -4,12 +4,9 @@
 #необходимое кол-во страниц для обработки
 #Выходные данные: в модулях
 
-
 from bs4 import BeautifulSoup as BS
 import urllib.request
 from lamoda_parcer import lamoda
-from element_shop_parcer import element_shop
-from ozon_parcer import ozon
 def main_parcer():
     all_links = ['https://www.lamoda.ru/c/2968/shoes-krossovki-kedy/?page=1', 'https://www.lamoda.ru/c/2981/shoes-krossovk-kedy-muzhskie/?page=1', 'https://elementshop.ru/catalog/shoes/-vid-krossovki/pol-muzh/']
     all_pages = [167, 161, 5]
@@ -36,15 +33,10 @@ def main_parcer():
         my_page = all_pages [2]
         how_much_pages = int(input("Укажите, сколько страниц спарсить " + "(максимум " + str(my_page) + "): "))
         print("Работает парсер для сайта Element Shop... ")
-        element_shop()
         print("Готово!")
     elif int(link) == 4:
         print("Работает парсер для сайта Ozon... ")
-        ozon()
         print("Готово!")
-
-
 
     return 0
 
-main_parcer()
