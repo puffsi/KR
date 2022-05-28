@@ -1,0 +1,59 @@
+Preprocessor:
+
+Use? - no
+
+Parcer:
+
+Use? - no
+
+GENDER:
+M
+PATH TO SAVE:
+C:\system_test\parsing
+HOW MANY PAGES:
+10
+
+Unificator:
+
+Use? - no
+
+PATH TO UNIFICATE:
+C:\system_test\parsing
+GENDER:
+M
+PATH TO SAVE:
+C:\system_test\unification
+HOW MUCH:
+100
+
+Neural_Network_1:
+
+Use? - no
+
+TRAIN_DIRECTORY:
+C:\system_test\unification
+WHERE_TO_SAVE:
+C:\system_test\networks
+
+Neural_Network_2:
+
+Use? - no
+
+Recognizer:
+
+Use? - yes
+
+MODEL PATH:
+C:\system_test\networks\MyNetwork222.h5
+TEST PATH:
+C:\system_test\unification\for_test
+START PIC NUMBER M:
+1
+START PIC NUMBER F:
+1
+UNTIL M:
+90
+UNTIL F:
+91
+PROTOCOL FILENAME:
+protocol.txt
